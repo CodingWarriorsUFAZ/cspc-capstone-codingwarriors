@@ -1,0 +1,55 @@
+Assuming unrestricted shared filesystem usage.
+
+SNAKEMAKE
+=========
+  Date: 2026-11-26 19:33:53
+  Workflow ID: 51a6f366-0cef-4904-8141-8cfd1ccd52af
+  Platform: Linux-7.0.0-38-generic-x86_64-with-glibc2.43
+  Host: bs
+  User: bs
+  Snakemake version: 9.27.2
+  Python version: 3.11.18 (main, Oct 26 2026, 18:19:35) [GCC 14.3.0]
+  Command: /home/bs/miniconda3/envs/cspc-capstone/bin/snakemake --cores 1
+  Snakefile: /home/bs/Desktop/CSPC_UFAZ/cspc-capstone-codingwarriors/Snakefile
+  Base directory: /home/bs/Desktop/CSPC_UFAZ/cspc-capstone-codingwarriors
+  Run directory: /home/bs/Desktop/CSPC_UFAZ/cspc-capstone-codingwarriors
+  Working directory: /home/bs/Desktop/CSPC_UFAZ/cspc-capstone-codingwarriors
+  Config file(s): []
+  Config MD5: 99914b932bd37a50b983c5e7c90ae93b
+
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+plot_capacity        1
+all                  1
+total                2
+
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Nov 26 19:33:53 2026]
+localrule plot_capacity:
+    input: data/raw/battery_cycle_level_dataset_CLEAN_FINAL.csv
+    output: results/capacity_vs_cycle.png
+    jobid: 1
+    reason: Missing output files: results/capacity_vs_cycle.png
+    resources: tmpdir=/tmp
+[Thu Nov 26 19:33:55 2026]
+Finished jobid: 1 (Rule: plot_capacity)
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Thu Nov 26 19:33:55 2026]
+localrule all:
+    input: results/capacity_vs_cycle.png
+    jobid: 0
+    reason: Input files updated by another job: results/capacity_vs_cycle.png
+    resources: tmpdir=/tmp
+[Thu Nov 26 19:33:55 2026]
+Finished jobid: 0 (Rule: all)
+2 of 2 steps (100%) done
+Complete log(s): /home/bs/Desktop/CSPC_UFAZ/cspc-capstone-codingwarriors/.snakemake/log/2026-11-26T193353.124256.snakemake.log
+Elapsed time: 0:00:01.978119
